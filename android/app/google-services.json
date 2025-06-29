@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "973765818971",
+    "project_id": "bitecube-28b4f",
+    "storage_bucket": "bitecube-28b4f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973765818971:android:5a8e5844876b9f19fbdd7e",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.bitecube"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3VZhJQRiWCAslmt6yK6o4CigOESrrIN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

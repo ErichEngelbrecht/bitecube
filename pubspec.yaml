@@ -1,0 +1,42 @@
+name: bitecube
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  auto_route: ^10.1.0+1
+  bloc: ^9.0.0
+  cloud_firestore: ^5.6.9
+  firebase_analytics: ^11.5.0
+  firebase_auth: ^5.6.0
+  firebase_core: ^3.14.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  fpdart: ^1.1.1
+  freezed_annotation: ^3.0.0
+  injectable: ^2.5.0
+  intl: ^0.20.2
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  auto_route_generator: ^10.2.3
+  bloc_test: ^10.0.0
+  build_runner: ^2.4.15
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^3.0.6
+  injectable_generator: ^2.7.0
+  json_serializable: ^6.9.5
+  mocktail: ^1.0.4
+  very_good_analysis: ^9.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
