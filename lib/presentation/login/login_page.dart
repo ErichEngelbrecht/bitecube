@@ -29,50 +29,57 @@ class LoginPage extends StatelessWidget {
     var email = '';
     var password = '';
 
-    return BitecubeScaffold(
-      title: context.l10n.loginAppBarTitle,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            BitecubeTextField(
-              onChanged: (text) => email = text,
-              label: context.l10n.email,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: BitecubeTextField(
-                onChanged: (text) => password = text,
-                label: context.l10n.password,
+    return BlocListener<AccountBloc, AccountState>(
+      listener: (context, state) {
+        if (state.failure != null) {
+          BitecubeSnackBar(context, 'Invalid Login Credentials').show();
+        }
+      },
+      child: BitecubeScaffold(
+        title: context.l10n.loginAppBarTitle,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BitecubeTextField(
+                onChanged: (text) => email = text,
+                label: context.l10n.email,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  BitecubeButton(
-                    child: Text(context.l10n.loginAppBarTitle),
-                    onPressed: () => context.read<AccountBloc>().add(
-                          AccountEvent.onLogIn(
-                            email: email,
-                            password: password,
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: BitecubeTextField(
+                  onChanged: (text) => password = text,
+                  label: context.l10n.password,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BitecubeButton(
+                      child: Text(context.l10n.loginAppBarTitle),
+                      onPressed: () => context.read<AccountBloc>().add(
+                            AccountEvent.onLogIn(
+                              email: email,
+                              password: password,
+                            ),
                           ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: BitecubeButton(
+                        child: Text(context.l10n.register),
+                        onPressed: () => context.router.push(
+                          const SignUpPageRoute(),
                         ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: BitecubeButton(
-                      child: Text(context.l10n.register),
-                      onPressed: () => context.router.push(
-                        const SignUpPageRoute(),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

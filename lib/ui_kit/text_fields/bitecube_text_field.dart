@@ -40,6 +40,11 @@ class BitecubeTextField extends StatelessWidget {
       readOnly: readOnly,
       onTap: onTap,
       decoration: InputDecoration(
+        errorBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.red,
+          ),
+        ),
         border: const OutlineInputBorder(),
         label: Text(label),
       ),

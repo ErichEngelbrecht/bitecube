@@ -13,13 +13,13 @@ class AppRouter extends RootStackRouter {
           path: '/login',
           page: LoginPageRoute.page,
           // TODO: Uncomment 'initial: true' to enable logging in (online mode)
-          // initial: true,
+          initial: true,
         ),
         AutoRoute(
           path: '/home',
           page: HomePageRoute.page,
           // TODO: Comment out 'initial: true' to enable logging in (online mode)
-          initial: true,
+          // initial: true,
         ),
         AutoRoute(
           path: '/signUp',

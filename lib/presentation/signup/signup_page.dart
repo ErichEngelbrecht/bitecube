@@ -46,9 +46,12 @@ class SignUpPage extends StatelessWidget {
                 onChanged: (text) => name = text,
                 label: context.l10n.name,
               ),
-              BitecubeTextField(
-                onChanged: (text) => email = text,
-                label: context.l10n.email,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: BitecubeTextField(
+                  onChanged: (text) => email = text,
+                  label: context.l10n.email,
+                ),
               ),
               BitecubeTextField(
                 onChanged: (text) => password = text,
